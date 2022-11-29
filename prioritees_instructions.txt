@@ -1,0 +1,2 @@
+On ne touche pas a abstract.
+->L'implémentation du service de collecte avec le greffon (lien a-Un ou lien est-Un se fait via interface(methode fabrique)).
