@@ -1,2 +1,13 @@
 On ne touche pas a abstract.
 ->L'implémentation du service de collecte avec le greffon (lien a-Un ou lien est-Un se fait via interface(methode fabrique)).
+
+On a construit le GreffonEstUn(*), reste la solution de collecte l'implémentation de l'interface collecte(polymorphisme dans le constructeur de ce dernier(*)).
+On suit l'exemple d'ecriture sur un fichier.(fourni par le sujet)
+
+
+On doit afficher:
+a chaque arret: le nombre d'entrees et le nombre de sorties
+et numeroter par incrementation le nombre d'arrets via:
+arret numero i -> entrees: int(), sorties:(int),..
+voilà.
+
