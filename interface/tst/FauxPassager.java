@@ -18,6 +18,8 @@ class FauxPassager implements Passager,Usager {
   static final byte DEBOUT = 2;
   byte status = DEHORS;
 
+    GreffonAUn greffon;
+
   final java.util.List<String> logs = new java.util.LinkedList<String>();
 
   FauxPassager() {
@@ -65,4 +67,8 @@ class FauxPassager implements Passager,Usager {
   public void monterDans(Transport t) {
       return;
   }
+
+    public void setGreffon(GreffonAUn g){
+	this.greffon=g;
+    }
 }

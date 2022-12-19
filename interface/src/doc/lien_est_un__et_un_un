@@ -1,0 +1,53 @@
+lien est-un:
+facile, c'était notre tâche.
+lien a-un:
+Le greffon doit avoir un lien a un avec l'autobus, avant on avait un héritage soit la class GreffonAUn extends l'autobus en faisant des overrides des différentes fonctions renvoyant à l'attribut collecteur initialisé dans le constructeur les infos.
+lien a-un: totalement différent:
+on cherche à ne pas faire de l'extends. Soit de l'implements tout court.
+Ca va contenir un public Collecteur c et dans le constructeur on prendra Vehicule v2 et Collecteur c2 comme arguments, ainsi on fera: v=v2, t=(Transport)v2, c=c2 comme instructions du constructeur.(comme d'habitude, on veut le VEHICULE vis-a-vis du client).
+Mais pour envoyer l'information, comment faire ; il faut voire tout le code ce qui est le cas toujours:
+@Override toutes les fonctions:
+monteeDemanderAssis:
+if(!v.aPlaceAssise())
+	return;
+	//faire appel au greffon, le DEBUTER SOIT:
+	//appel à une méthode pas de Autobus, confusion mais de Passager car PassagerAbstrait est une classe abstraite.
+this.envoyerGreffon(p);
+c.uneEntree();
+
+avec envoyerGreffon(Passager p) en public void faisant:
+p.setGreffon(this) avec la fonction dans l'interface Passager:
+public void setGreffon(Passager p) qui fait en PassagerAbstrait: p.greffon(attribut)=greffon avec greffon attribut ajouté à PassagerAbstrait. Voilà. 
+
+On continue comme cela.
+Resume:
+dans un override (implements pas extends):
+on fera this.envoyerGreffon(p) puis c.uneEntree(); 
+avec envoyerGreffon dans les methodes de la classe GreffonAUn qui prend en parametre Passager p et qui fait:
+p.setGreffon=this;
+avec Passager interface contenant ceci et PassagerAbstrait le coeur contient un attribut de type GreffonAUn avec une fonction setGreffon qui fait en GROS:
+public void setGreffon(GreffonAUn g){
+this.greffon=g;} dans PassagerAbstrait.java. 
+ainsi this.envoyerGreffon(p) va faire appel a p.setGreffon(this) (continuité) qui va faire this.greffon=g avec setGreffon méthode essentielle de Passager dans l'INTERFACE. VOILà.
+
+L'autre méthode de collecte est détaillée.
+List<HashMap<String,date>> data;
+data.get(attribut_donne).donnees_enregistrees("entrees",0);
+ainsi de suite.
+C'est pas essentielle. La gestion du lien est un et a un et le fait qu'on puisse enregistrer avec un service de collecte independamment de l'implémentation soit précisement le comportement de l'autobus fait de ce service de collecte impeccable dans le package tec.
+FIN_PROJET_______POO.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

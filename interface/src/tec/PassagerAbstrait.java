@@ -7,6 +7,10 @@ abstract public class PassagerAbstrait implements Passager,Usager {
     private int destination;
     private Position maPosition;
 
+
+    private GreffonAUn greffon;//obligé(appris!!)
+
+    
     final private ArretComportement comportement;
     
     public PassagerAbstrait(String nom, int destination, ArretComportement comportement) {
@@ -20,6 +24,11 @@ abstract public class PassagerAbstrait implements Passager,Usager {
         this.maPosition = Position.dehors();
 	this.comportement=comportement;
     }
+
+
+    public void setGreffon(GreffonAUn g) {
+                this.greffon = g;
+        }
 
     public String nom() {
         return nom;

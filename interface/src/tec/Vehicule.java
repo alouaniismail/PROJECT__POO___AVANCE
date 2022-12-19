@@ -33,6 +33,8 @@ interface Vehicule {
    */
   //public void allerArretSuivant();
 
+    //public void envoyerGreffon(Passager p);(pas grave si on l'enleve)
+    
   /**
    *  Y-a-t-il des places assises libres ?
    * @return vrai si nombre max de places assises n'est pas atteinte. 

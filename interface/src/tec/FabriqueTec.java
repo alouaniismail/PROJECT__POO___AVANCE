@@ -1,4 +1,5 @@
 package tec;
+import collecte.*;
 public final class FabriqueTec
 {
 
@@ -31,8 +32,23 @@ public final class FabriqueTec
 	//pour eviter l'erreur du retour statement...
     }
     
-    public static Transport faireAutobus(int nbr_1, int nbr2)
+    /*public static Transport faireAutobus(int nbr_1, int nbr2)
     {
 	return new Autobus(nbr_1,nbr2);
     }
+    */
+    //pas besoin maintenant.
+
+
+    public static Transport faireGreffonsAUnAutobus(int nbPlaceAssise, int nbPlaceDebout, Collecte col) {
+                return new GreffonAUn(new Autobus(nbPlaceAssise, nbPlaceDebout), col);
+        };
+
+        public static Transport faireGreffonsEstUnAutobus(int nbPlaceAssise, int nbPlaceDebout, Collecte col) {
+                return new GreffonEstUn(nbPlaceAssise, nbPlaceDebout, col);
+        };
+
+
+    //ajouts importants si on veut initialiser via un lien est-UN un autobus
+    //avec sa collecte à lui.
 }

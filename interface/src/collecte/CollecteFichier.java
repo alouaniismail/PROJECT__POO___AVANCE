@@ -3,7 +3,9 @@ package collecte;
 import java.io.Writer;
 import java.io.FileWriter;
 import java.io.PrintWriter;
-import java.io.IOexception;
+import java.io.*;
+//import java.io;
+import java.io.IOException;
 
 public class CollecteFichier implements Collecte{
     private int arret;
@@ -28,8 +30,7 @@ public class CollecteFichier implements Collecte{
 	    f=new FileWriter("Collecte.txt");
 	    PrintWriter p=new PrintWriter((Writer)f);
 	    p.println("Arrêt\tEntrée\tSortie\n");
-	    p.flush();
-	}catch(IOexception e){
+	    p.flush();}catch(IOException e){
 	    e.printStackTrace();
 	}
     }
@@ -57,10 +58,9 @@ public class CollecteFichier implements Collecte{
 	//inline binaire en characteres ASCII utf-8[][].
 	p.println(arret+"\t"+entree+"\t"+sortie+"\n");
 	p.flush();
-	try{
-	    f.close();
-	}catch(IOexception e){
-	    e.printSTackTrace();
+	try{	    f.close();
+	}catch(IOException e){
+	    e.printStackTrace();
 	}
     }
 }

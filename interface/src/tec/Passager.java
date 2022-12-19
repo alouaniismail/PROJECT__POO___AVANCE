@@ -32,8 +32,10 @@ package tec;
  */
 interface Passager {
   /**
-   * fournit le nom de du passager.
-   */
+   * fournit le nom de du passager.*/
+
+public void setGreffon(GreffonAUn g);
+    /* */
   public String nom();
   /**
    * Le passager est-il en dehors d'un véhicule ?
